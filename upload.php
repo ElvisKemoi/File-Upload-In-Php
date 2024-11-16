@@ -15,21 +15,22 @@ if (isset($_POST['submit'])) {
     $fileSize = $file['size'];
     $fileError = $file['error'];
     $fileType = $file['type'];
+    echo print_r($file);
 
-    // Set the target file path
-    $targetFile = $uploadDir . $fileName;
+    // // Set the target file path
+    // $targetFile = $uploadDir . $fileName;
 
-    // Check if there was an error with the upload
-    if ($fileError === 0) {
-        // Move the file to the target directory
-        if (move_uploaded_file($fileTmpName, $targetFile)) {
-            echo "The file " . htmlspecialchars($fileName) . " has been uploaded successfully.";
-        } else {
-            echo "An error occurred while uploading the file.";
-        }
-    } else {
-        echo "Error uploading the file. Error code: $fileError";
-    }
+    // // Check if there was an error with the upload
+    // if ($fileError === 0) {
+    //     // Move the file to the target directory
+    //     if (move_uploaded_file($fileTmpName, $targetFile)) {
+    //         echo "The file " . htmlspecialchars($fileName) . " has been uploaded successfully.";
+    //     } else {
+    //         echo "An error occurred while uploading the file.";
+    //     }
+    // } else {
+    //     echo "Error uploading the file. Error code: $fileError";
+    // }
 } else {
     echo "No file submitted.";
 }
